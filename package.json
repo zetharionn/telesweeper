@@ -6,6 +6,11 @@
 		"fmt": "oxfmt",
 		"prepare": "husky"
 	},
+	"dependencies": {
+		"@clack/core": "^1.5.1",
+		"@clack/prompts": "^1.8.1",
+		"teleproto": "^1.229.0"
+	},
 	"devDependencies": {
 		"@types/bun": "^1.4.2",
 		"husky": "^9.1.7",
