@@ -21,7 +21,10 @@
 		"typescript": "^7.0.2"
 	},
 	"nano-staged": {
-		"*.{js,ts}": "oxfmt; oxlint --fix",
+		"*.{js,ts}": [
+			"oxfmt",
+			"oxlint --fix"
+		],
 		"*.json": "oxfmt"
 	}
 }
