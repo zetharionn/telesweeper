@@ -1,0 +1,24 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"categories": {
+		"correctness": "error",
+		"nursery": "off",
+		"pedantic": "off",
+		"perf": "warn",
+		"restriction": "error",
+		"style": "off",
+		"suspicious": "warn"
+	},
+	"env": {
+		"builtin": true,
+		"node": true
+	},
+	"options": {
+		"typeAware": true,
+		"typeCheck": true
+	},
+	"rules": {
+		"no-console": "off"
+	},
+	"plugins": ["eslint", "import", "typescript"]
+}
