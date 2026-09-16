@@ -50,7 +50,7 @@ export const setup = async (): Promise<void> => {
 			onError: err => console.error(err)
 		})
 
-		await setCredentials([client.session.save(), api_id, api_hash])
+		await setCredentials(client.session.save(), api_id, api_hash)
 
 		await client.disconnect()
 
