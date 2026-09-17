@@ -1,9 +1,9 @@
-import { Logger, TelegramClient } from 'teleproto'
-import { LogLevel } from 'teleproto/extensions/Logger'
+import { TelegramClient } from 'teleproto'
 import { StringSession } from 'teleproto/sessions'
 
 import { getCredentials } from './credentials.ts'
 import { setup } from './setup.ts'
+import { logger } from './utils/logger.ts'
 
 let credentials = await getCredentials()
 
@@ -21,7 +21,7 @@ const client = new TelegramClient(
 	Number(credentials.api_id),
 	credentials.api_hash,
 	{
-		baseLogger: new Logger(LogLevel.NONE)
+		baseLogger: logger
 	}
 )
 

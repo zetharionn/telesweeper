@@ -1,10 +1,10 @@
 import { intro, log, outro, password, text } from '@clack/prompts'
-import { Logger, TelegramClient } from 'teleproto'
-import { LogLevel } from 'teleproto/extensions/Logger'
+import { TelegramClient } from 'teleproto'
 import { StringSession } from 'teleproto/sessions'
 
 import { setCredentials } from './credentials.ts'
 import { ask } from './utils/ask.ts'
+import { logger } from './utils/logger.ts'
 
 export const setup = async (): Promise<void> => {
 	intro("Let's set everything up")
@@ -19,10 +19,10 @@ export const setup = async (): Promise<void> => {
 	)
 
 	try {
-		log.message('Authorize using phone number linked to your Telegram account')
+		log.info('Authorize using phone number linked to your Telegram account')
 
 		const client = new TelegramClient(new StringSession(''), Number(api_id), api_hash, {
-			baseLogger: new Logger(LogLevel.NONE)
+			baseLogger: logger
 		})
 
 		await client.start({
